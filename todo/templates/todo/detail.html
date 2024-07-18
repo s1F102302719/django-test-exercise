@@ -14,7 +14,7 @@
     <ul>
       <li>Posted at: {{ task.posted_at }}</li>
       {% if task.due_at %}
-      <li>Due at: {{ task.due_at }}</li>
+      <li>Due at: <span id="due_at">{{ task.due_at }}</span></li>
       {% endif %}
       {% if task.completed %}
       <li>Status: Completed</li>
@@ -52,6 +52,8 @@
     {% else %}
     <p>No comment.</p>
     {% endif %}
+    <div id="daysRemaining"></div>
+    <script src="{% static 'js/detail.js' %}"></script>
   </body>
 
 </html>
