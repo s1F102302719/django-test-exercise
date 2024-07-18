@@ -32,6 +32,10 @@
       <a href="{% url 'index' %}?order=due" class="btn-square">Sort by Due Date</a> |
       <a href="{% url 'index' %}?order=post" class="btn-square">Sort by Posted Date</a>
     </div>
+    <div>
+      <P>Completed:<span id="Comp_cnt">0</span>件</P>
+      <p>Not Completed:<span id="NoComp_cnt">0</span>件</p>
+    </div>
 
     {% for task in tasks %}
     <div class="text">
@@ -49,6 +53,7 @@
       </ul>
     </div>
     {% endfor %}
+    <script src="{% static 'js/index.js' %}"></script>
   </body>
 
 </html>
