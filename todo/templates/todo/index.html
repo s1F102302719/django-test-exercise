@@ -5,6 +5,7 @@
   <head>
     <title>To Do Application</title>
     <meta charset="UTF-8">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
     <meta name="author" content="INIAD">
   </head>
 
@@ -15,11 +16,11 @@
       {% csrf_token %}
       <div>
         <label for="titleInput">Title</label><br>
-        <input id="titleInput" name="title" type="text" placeholder="Input title">
+        <input id="titleInput" name="title" type="text" placeholder="Input title" class="box">
       </div>
       <div>
         <label for="dueInput">Due at:</label><br>
-        <input id="dueInput" name="due_at" type="datetime-local">
+        <input id="dueInput" name="due_at" type="datetime-local" class="box">
       </div>
       <div>
         <button type="submit">Submit</button>
@@ -28,8 +29,8 @@
     <br>
 
     <div>
-      <a href="{% url 'index' %}?order=due">Sort by Due Date</a> |
-      <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
+      <a href="{% url 'index' %}?order=due" class="btn-square">Sort by Due Date</a> |
+      <a href="{% url 'index' %}?order=post" class="btn-square">Sort by Posted Date</a>
     </div>
 
     {% for task in tasks %}
